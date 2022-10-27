@@ -87,10 +87,12 @@ a {
   z-index: -2;
 }
 
+/* Slide home */
 .slideHome {
   background-image: url(./img/slideHome/bg.png);
   height: 768px;
   width: 1024px;
+  transition: all 3s ease;
 }
 
 .slideHome__hello {
@@ -156,11 +158,51 @@ a {
   align-items: center;
 }
 
-.slideHome__baktLeft {
+.slideHome__baktLeft,
+.slideHome__baktTop {
   position: absolute;
   left: 23px;
   top: 503px;
   z-index: 4;
+  animation: bakt 3s linear alternate;
+  animation-iteration-count: infinite;
+}
+
+.slideHome__baktTop {
+  left: 745px;
+  top: 62px;
+}
+
+@keyframes bakt {
+  0% {
+    transform: translateY(15px);
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+
+.slideHome__baktBottom {
+  position: absolute;
+  left: 542px;
+  top: 641px;
+  z-index: 12;
+  animation: baktBottom 3s linear alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes baktBottom {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .slideHome__pink {
@@ -174,13 +216,6 @@ a {
   left: 423px;
   top: 160px;
   z-index: 11;
-}
-
-.slideHome__baktBottom {
-  position: absolute;
-  left: 542px;
-  top: 641px;
-  z-index: 12;
 }
 
 .slideHome__baktTransparent {
@@ -197,13 +232,6 @@ a {
   z-index: 14;
 }
 
-.slideHome__baktTop {
-  position: absolute;
-  left: 745px;
-  top: 62px;
-  z-index: 15;
-}
-
 .slideHome__baktLeftUp {
   position: absolute;
   left: -27px;
@@ -216,12 +244,26 @@ a {
   left: 844px;
   top: 200px;
   z-index: 17;
+  animation: baktRight 5s linear alternate;
+  animation-iteration-count: infinite;
 }
 
+@keyframes baktRight {
+  0% {
+    transform: translate(60px, 50px) rotate(20deg);
+  }
+  100% {
+    transform: translate(-30px, -30px) rotate(0);
+  }
+}
+
+/* Slide message */
 .slideMessage {
   background-image: url(./img/slideMessage/bg.png);
   height: 768px;
   width: 1024px;
+  cursor: grab;
+  transition: 2s all ease;
 }
 
 .slideMessage__title {
@@ -273,47 +315,76 @@ a {
 .slideMessage__pinkFive {
   opacity: 0.49;
   position: absolute;
-  left: 890px;
+  left: 810px;
   top: 434px;
   z-index: 8;
+  animation: pinkFour 3s linear;
+  animation-iteration-count: 1;
 }
 
 .slideMessage__pinkThree {
   opacity: 0.49;
   position: absolute;
-  left: 110px;
-  top: 10px;
+  left: 150px;
   z-index: 7;
+  animation: pinkOne 3s ease-in-out;
+  animation-iteration-count: 1;
 }
 
 .slideMessage__pinkFour {
   opacity: 0.49;
   position: absolute;
-  left: 55px;
-  top: -51px;
+  left: -110px;
+  top: -31px;
   z-index: 6;
+  animation: pinkFour 4s linear;
+  animation-iteration-count: 1;
 }
 
 .slideMessage__pinkOne {
   position: absolute;
-  left: 50px;
-  top: 0;
+  left: 200px;
+  top: 20px;
   z-index: 5;
+  animation: pinkOne 4s linear;
+  animation-iteration-count: 1;
 }
 
 .slideMessage__pinkSecond {
   opacity: 0.529;
   position: absolute;
-  left: 79px;
+  left: 209px;
   top: 10;
   z-index: 4;
+  animation: pinkOne 4s linear;
+  animation-iteration-count: 1;
 }
 
+@keyframes pinkOne {
+  0% {
+    transform: translate(40px, 10px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes pinkFour {
+  0% {
+    transform: translate(60px, 50px);
+  }
+  100% {
+    transform: translate(0) rotate(0);
+  }
+}
+
+/* Slode brend */
 .slideBrend {
   background-image: url(./img/slideBrend/bg.png);
   height: 768px;
   width: 1024px;
   color: rgb(36, 36, 36);
+  cursor: grab;
 }
 
 .slideBrend__info,
@@ -343,7 +414,7 @@ a {
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 45;
+  z-index: 20;
 }
 
 .slideBrend__about {
@@ -414,6 +485,8 @@ a {
   left: 87px;
   top: 223px;
   z-index: 9;
+  animation: bubble 8s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 .slideHome__bubbleSecond {
@@ -422,6 +495,8 @@ a {
   left: 181px;
   top: 337px;
   z-index: 28;
+  animation: bubbleSix 4s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 .slideHome__bubbleThree {
@@ -430,6 +505,8 @@ a {
   left: 196px;
   top: 78px;
   z-index: 27;
+  animation: bubbleSeven 4s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 .slideHome__bubbleFour {
@@ -438,6 +515,8 @@ a {
   left: 239px;
   top: 578px;
   z-index: 26;
+  animation: bubble 6s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 .slideHome__bubbleFive {
@@ -445,7 +524,9 @@ a {
   position: absolute;
   left: 176px;
   top: 156px;
-  z-index: 45;
+  z-index: 30;
+  animation: bubble 3s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 .slideHome__bubbleSix {
@@ -453,7 +534,9 @@ a {
   position: absolute;
   left: 188px;
   top: 696px;
-  z-index: 50;
+  z-index: 29;
+  animation: bubbleSix 4s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 .slideHome__bubbleSeven {
@@ -462,6 +545,8 @@ a {
   left: 17px;
   top: 473px;
   z-index: 33;
+  animation: bubbleSeven 2s linear alternate;
+  animation-iteration-count: infinite;
 }
 
 .slideHome__bubbleEight {
@@ -469,14 +554,48 @@ a {
   position: absolute;
   left: 35px;
   top: 533px;
-  z-index: 50;
+  z-index: 31;
+  animation: bubble 3s linear alternate;
+  animation-iteration-count: infinite;
 }
 
+@keyframes bubbleSix {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bubbleSeven {
+  0% {
+    transform: translate(15px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes bubble {
+  0% {
+    transform: translate(15px, 15px) rotate(20deg);
+  }
+  100% {
+    transform: translate(-15px, -15px) rotate(0);
+  }
+}
+
+/* Pop up */
 .slidePlus {
-  background-image: url(./img/slidePlus/bg.png);
+  display: none;
   height: 768px;
   width: 1024px;
   color: rgb(36, 36, 36);
+  background-color: rgb(22, 39, 62, 0.702);
 }
 
 .slidePlus__slideTwo {
@@ -534,6 +653,7 @@ a {
   cursor: pointer;
 }
 
+/* Paginator */
 .paginator {
   position: absolute;
   left: 220px;
@@ -541,11 +661,11 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 100;
+  z-index: 2;
 }
 
 .paginator img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .paginator__ellipse {
